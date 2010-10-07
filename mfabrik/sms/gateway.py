@@ -88,7 +88,7 @@ class SMSGateway(object):
             else:
                 raise BadInputException("Funny multiple response.") 
 
-        if type(to) != long:
+        if type(to) != long and type(to) != int:
             raise BadInputException("Recipient number must be international phone number without + prefix. Make sure you use Python 'long' type. Got:" + unicode(to))
 
         timestamp = time.time()
